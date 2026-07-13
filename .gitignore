@@ -16,7 +16,6 @@ docs/.~lock.*
 .boto
 .cache
 #  may contain gcloud files
-.config
 .git.not
 .gitconfig
 .local
@@ -50,7 +49,6 @@ Makefile
 Makefile.in
 configure
 configure~
-config/
 config/install-sh
 config/missing
 aclocal
