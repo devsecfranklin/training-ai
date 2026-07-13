@@ -1,0 +1,80 @@
+# Makefile for a LaTeX project
+
+# --- USER CONFIGURATION ---
+# Main LaTeX file (without .tex extension)
+MAIN_TEX_FILE = ai-slides
+
+# Bibliography file (without .bib extension), if any
+BIB_FILE = refs
+
+# Output directory for build artifacts (e.g., .aux, .log, .pdf)
+BUILD_DIR = build
+
+# Viewer command for the PDF output
+PDF_VIEWER = evince
+
+# --- END USER CONFIGURATION ---
+
+# Define the source files
+TEX_SOURCES = $(wildcard *.tex)
+BIB_SOURCES = $(wildcard *.bib)
+IMG_SOURCES = $(wildcard *.png *.jpg *.jpeg *.gif *.eps *.pdf)
+
+# Output files
+PDF_OUTPUT = $(BUILD_DIR)/$(MAIN_TEX_FILE).pdf
+
+# Default target
+.PHONY: all
+all: $(PDF_OUTPUT)
+
+# Create the build directory if it doesn't exist
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
+
+# Rule to compile the LaTeX document
+# This rule performs multiple passes to ensure references and TOC are correct
+$(PDF_OUTPUT): tex/$(TEX_SOURCES) $(BIB_SOURCES) images/$(IMG_SOURCES) | $(BUILD_DIR)
+	@echo "Compiling $(MAIN_TEX_FILE).tex..."
+	# First pass
+	pdflatex -output-directory=$(BUILD_DIR) tex/$(MAIN_TEX_FILE).tex
+	# Run BibTeX if a bibliography file is specified
+#ifeq ($(strip $(BIB_FILE)),$(BIB_FILE))
+#	if [ -f "$(BUILD_DIR)/$(MAIN_TEX_FILE).aux" ]; then \
+#		bibtex $(BUILD_DIR)/$(MAIN_TEX_FILE).aux; \
+	#fi
+#endif
+	# Second pass (for references, TOC, etc.)
+	pdflatex -output-directory=$(BUILD_DIR) tex/$(MAIN_TEX_FILE).tex
+	# Third pass (sometimes needed for complex cross-references)
+	pdflatex -output-directory=$(BUILD_DIR) tex/$(MAIN_TEX_FILE).tex
+	@echo "Compilation complete. Output: $(PDF_OUTPUT)"
+
+# Rule to clean up build artifacts
+.PHONY: clean
+clean:
+	@echo "Cleaning build artifacts..."
+	rm -rf $(BUILD_DIR)
+	@echo "Clean complete."
+
+# Rule to view the compiled PDF
+.PHONY: view
+view: $(PDF_OUTPUT)
+	@echo "Opening $(PDF_OUTPUT) with $(PDF_VIEWER)..."
+	$(PDF_VIEWER) $(PDF_OUTPUT) &
+
+# Rule to force re-compilation
+.PHONY: force
+force: clean all
+
+# Phony targets to avoid conflicts with files of the same name
+.PHONY: all clean view force help
+
+# Help message
+.PHONY: help
+help:
+	@echo "Usage:"
+	@echo "  make             - Compiles the LaTeX document."
+	@echo "  make clean       - Removes all generated build files."
+	@echo "  make view        - Opens the compiled PDF document."
+	@echo "  make force       - Cleans and then recompiles the LaTeX document."
+	@echo "  make help        - Displays this help message."
