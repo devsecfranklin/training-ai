@@ -34,14 +34,14 @@
 	}
 	
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{section.png}}
-	\section{\textcolor{white}{Review}}
+	\section{\textcolor{white}{Review From last Time}}
 	
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
 	\begin{frame}{}
 		\setlength{\TPHorizModule}{\textwidth}
 		\setlength{\TPVertModule}{\textwidth}
 		\begin{textblock}{0.74}(0.05,0.05)
-			\bfseries\large\normalcolor{Prompting the LLM}
+			\bfseries\large\normalcolor{Part 1: Prompting the LLM}
 		\end{textblock}
 		We looked at how to prompt and why it is important.
 	\end{frame}
@@ -55,16 +55,9 @@
 		\setlength{\TPHorizModule}{\textwidth}
 		\setlength{\TPVertModule}{\textwidth}
 		\begin{textblock}{0.74}(0.05,0.05)
-			\bfseries\large\normalcolor{Prompting the LLM}
+			\bfseries\large\normalcolor{Part 2: LLM Tokenization}
 		\end{textblock}
-		\begin{columns}
-			\begin{column}{.5\textwidth}
-				\includegraphics[width=1\columnwidth]{ai-venn.png}
-			\end{column}
-			\begin{column}{.5\textwidth}
-				\includegraphics[width=1\columnwidth]{ai-umbrella.png}
-			\end{column}
-		\end{columns}
+		We looked at how the LLM chunks our sentences. 
 	\end{frame}
 
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{section.png}}
@@ -80,17 +73,15 @@
 		\end{textblock}
 		\begin{itemize}
 			
-			\item MCP Hosts: Programs like Claude Desktop, IDEs, or AI tools that want to access data through MCP
-			\item MCP Clients: Protocol clients that maintain 1:1 connections with servers
-			\item MCP Servers: Lightweight programs that each expose specific capabilities through the standardized Model Context Protocol
-			\item Local Data Sources: Your computer’s files, databases, and services that MCP servers can securely access
-			\item Remote Services: External systems available over the internet (e.g., through APIs) that MCP servers can connect to
+			\item The MCP creates a standardized, two-way connection for AI applications, allowing LLMs to easily connect with various data sources and tools.
+			\item MCP builds on existing concepts like tool use and function calling but standardizes them. This reduces the need for custom connections for each new AI model and external system.
+			\item MCP enables LLMs to use current, real-world data, perform actions, and access specialized features not included in their original training.
 		\end{itemize}
 	\end{frame}
 	
 	\note[itemize]{
 		\item Slide created July 24th, 2025
-		\item \href{https://en.wikipedia.org/wiki/Model_Context_Protocol}{what the heck is it, anyway}
+		\item Source material: \href{https://cloud.google.com/discover/what-is-model-context-protocol?hl=en}{What is the MCP and how does it work?}
 	}
 	
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
@@ -104,6 +95,15 @@
 		Retrieval-Augmented Generation (RAG) is an approach that improves how language models respond by connecting them to external data sources.
 	\end{frame}
 	
-	
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
+	\begin{frame}
+		\setlength{\TPHorizModule}{\textwidth}
+		\setlength{\TPVertModule}{\textwidth}
+		% Slide title in upper left
+		\begin{textblock}{0.74}(0.05,0.05)
+			\bfseries\large\normalcolor{Training Resources}
+		\end{textblock}
+		Relevant training materials.
+	\end{frame}
 	
 \end{document}
