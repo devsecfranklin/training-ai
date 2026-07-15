@@ -11,8 +11,8 @@
 \setbeamercolor{part title}{fg=white}
 
 % Set the document font https://tug.org/FontCatalogue/montserratregular/
-\usepackage[defaultfam,tabular,lining]{montserrat} %% Option 'defaultfam'
-%\usepackage[T1]{fontenc} % fontenc does not work with pdf latex 
+%\usepackage[defaultfam,tabular,lining]{montserrat} %% Option 'defaultfam'
+\usepackage[T1]{fontenc} % fontenc does not work with pdf latex 
 %\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
 % Required for using system fonts
 %\usepackage{fontspec}
@@ -38,24 +38,21 @@
 % Text positioning
 \usepackage[absolute,overlay]{textpos}
 
-% make the hyperlinks blue
-\usepackage{hyperref}
-\hypersetup{colorlinks=true,urlcolor=blue}
+\usepackage{tikz} % this is to format the orange rectangles
+\definecolor{mycolor}{HTML}{FA582D}
+\definecolor{panorange}{HTML}{FF6A00}
 
-%%% DRAFT watermark %%%
-%\usepackage{draftwatermark}
-%\SetWatermarkText{DRAFT}
-%\SetWatermarkScale{0.85}
-%\SetWatermarkLightness{0.9}
-
-\usepackage{textpos}
-
-%\useoutertheme[subsection=true]{miniframes}
-
+%%% HEADER %%%
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt} % remove the underline from below the graphic
+\setlength{\headheight}{25pt} % Adjust header height for graphics
 % section headers
 \usepackage{xkeyval}
 \usetheme{default} % Or your desired theme
-\definecolor{white}{HTML}{FFFFFF}  % Explicitly define white
+\definecolor{white}{HTML}{FFFFFF}  % Explicitly define whit
+
+\usepackage{hyperref} % make the hyperlinks blue
+\hypersetup{colorlinks=true,urlcolor=blue}
 
 \AtBeginSection[]{
 	\begin{frame}

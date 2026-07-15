@@ -7,25 +7,27 @@
 
 \documentclass[aspectratio=169]{beamer}
 
-\input{_header}
+\input{../_header-palo}
 
 \begin{document}
 	
-	% --- SLIDE 1: TITLE SLIDE ---
-	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{../images/title_bg.png}}
-	\begin{frame}{}
-		\setlength{\TPHorizModule}{\textwidth}
-		\setlength{\TPVertModule}{\textwidth}
-		\begin{textblock}{0.85}(0.05,0.35)
-			{\bfseries\Huge\color{black} The Gateway to AI:\\Understanding Tokenization}\\
-			\vspace{1.5em}
-			{\large Demystifying the Core Architecture of Language Models}\\
-			\vspace{0.5em}
-			{\small Palo Alto Networks --- Consultant Briefing}
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{title_bg.png}}
+	\begin{frame}
+		\setlength{\TPHorizModule}{120mm}
+		\setlength{\TPVertModule}{140mm}
+		\begin{textblock}{0.75}(0.05, 0.25)
+			\bfseries\Huge{Part 2: The Gateway to AI: Tokenization} \\
+			
+			\bfseries\small{\href{https://drive.google.com/file/d/1wfr\_2E9\_xZjOrY7pQP07Az928s40dDdP/view}{download latest version}}
+		\end{textblock}
+		\begin{textblock}{0.75}(0.99, 0.53)
+			\bfseries\textcolor{white}{Franklin Diaz}\\
+			\bfseries\textcolor{white}{Principal Engineer}\\
+			\bfseries\begin{scriptsize}\textcolor{white}{version 0.2b - August 27th, 2025}\end{scriptsize}
 		\end{textblock}
 	\end{frame}
-	
-	% --- SLIDE 2: INTRODUCTION ---
+
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
 	\begin{frame}{}
 		\setlength{\TPHorizModule}{\textwidth}
 		\setlength{\TPVertModule}{\textwidth}
@@ -42,7 +44,6 @@
 		\end{itemize}
 	\end{frame}
 	
-	% --- SLIDE 3: THE PIPELINE ---
 	\begin{frame}{}
 		\setlength{\TPHorizModule}{\textwidth}
 		\setlength{\TPVertModule}{\textwidth}
