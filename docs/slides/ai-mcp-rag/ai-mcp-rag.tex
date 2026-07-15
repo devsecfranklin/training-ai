@@ -19,7 +19,7 @@
 		\begin{textblock}{0.75}(0.05, 0.25)
 			\bfseries\Huge{Part 3: MCP \& RAG} \\
 			
-			\bfseries\small{\href{https://drive.google.com/file/d/1wfr\_2E9\_xZjOrY7pQP07Az928s40dDdP/view}{download latest version}}
+			\bfseries\small{\href{https://github.com/devsecfranklin/training-ai/blob/main/docs/slides/ai-mcp-rag/ai-mcp-rag.pdf}{download latest version}}
 		\end{textblock}
 		\begin{textblock}{0.75}(0.99, 0.53)
 			\bfseries\textcolor{white}{Franklin Diaz}\\
@@ -61,7 +61,7 @@
 	\end{frame}
 
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{section.png}}
-	\section{\textcolor{white}{Model Context Protocol}}
+	\section{\textcolor{white}{Model Context Protoco: architecture and components}}
 	
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
 	\begin{frame}{}
@@ -80,10 +80,86 @@
 	\end{frame}
 	
 	\note[itemize]{
+		\item The Model Context Protocol has a clear structure with components that work together to help LLMs and outside systems interact easily.
 		\item Slide created July 24th, 2025
 		\item Source material: \href{https://cloud.google.com/discover/what-is-model-context-protocol?hl=en}{What is the MCP and how does it work?}
 	}
 	
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
+	\begin{frame}{}
+		\setlength{\TPHorizModule}{\textwidth}
+		\setlength{\TPVertModule}{\textwidth}
+		% Slide title in upper left
+		\begin{textblock}{0.74}(0.05,0.05)
+			\bfseries\large\normalcolor{MCP Host}
+		\end{textblock}
+		The LLM is contained within the MCP host, an AI application or environment such as an AI-powered IDE or conversational AI. This is typically the user's interaction point, where the MCP host uses the LLM to process requests that may require external data or tools.
+	\end{frame}
+	
+	\note[itemize]{
+		\item The Model Context Protocol has a clear structure with components that work together to help LLMs and outside systems interact easily.
+		\item Slide created July 24th, 2025
+		\item Source material: \href{https://cloud.google.com/discover/what-is-model-context-protocol?hl=en}{What is the MCP and how does it work?}
+	}
+	
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
+	\begin{frame}{}
+		\setlength{\TPHorizModule}{\textwidth}
+		\setlength{\TPVertModule}{\textwidth}
+		% Slide title in upper left
+		\begin{textblock}{0.74}(0.05,0.05)
+			\bfseries\large\normalcolor{MCP Client}
+		\end{textblock}
+		The MCP client, located within the MCP host, helps the LLM and MCP server communicate with each other. \\
+		It translates the LLM's requests for the MCP and converts the MCP's replies for the LLM. It also finds and uses available MCP servers.
+	\end{frame}
+	
+	\note[itemize]{
+		\item The Model Context Protocol has a clear structure with components that work together to help LLMs and outside systems interact easily.
+		\item Slide created July 24th, 2025
+		\item Source material: \href{https://cloud.google.com/discover/what-is-model-context-protocol?hl=en}{What is the MCP and how does it work?}
+	}
+	
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
+	\begin{frame}{}
+		\setlength{\TPHorizModule}{\textwidth}
+		\setlength{\TPVertModule}{\textwidth}
+		% Slide title in upper left
+		\begin{textblock}{0.74}(0.05,0.05)
+			\bfseries\large\normalcolor{MCP Server}
+		\end{textblock}
+		The MCP server is the external service that provides context, data, or capabilities to the LLM. \\
+		It helps LLMs by connecting to external systems like databases and web services, translating their responses into a format the LLM can understand which helps developers provide diverse functionalities.
+	\end{frame}
+	
+	\note[itemize]{
+		\item The Model Context Protocol has a clear structure with components that work together to help LLMs and outside systems interact easily.
+		\item Slide created July 24th, 2025
+		\item Source material: \href{https://cloud.google.com/discover/what-is-model-context-protocol?hl=en}{What is the MCP and how does it work?}
+	}
+	
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
+	\begin{frame}{}
+		\setlength{\TPHorizModule}{\textwidth}
+		\setlength{\TPVertModule}{\textwidth}
+		% Slide title in upper left
+		\begin{textblock}{0.74}(0.05,0.05)
+			\bfseries\large\normalcolor{MCP Transport Layer}
+		\end{textblock}
+		The transport layer uses JSON-RPC 2.0 messages to communicate between the client and server, mainly through two transport methods:
+		\begin{itemize}
+			
+			\item Standard input/output (stdio): Works well for local resources, offering fast, synchronous message transmission
+			\item Server-sent events (SSE): Preferred for remote resources, allowing efficient, real-time data streaming
+		\end{itemize}
+	\end{frame}
+	
+	\note[itemize]{
+		\item The Model Context Protocol has a clear structure with components that work together to help LLMs and outside systems interact easily.
+		\item Slide created July 24th, 2025
+		\item Source material: \href{https://cloud.google.com/discover/what-is-model-context-protocol?hl=en}{What is the MCP and how does it work?}
+	}
+
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
 	\begin{frame}
 				\setlength{\TPHorizModule}{\textwidth}
