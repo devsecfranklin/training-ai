@@ -1,4 +1,4 @@
-name: build - resume
+name: slides
 on:
   - pull_request
 
@@ -11,6 +11,6 @@ jobs:
       - name: Compile resume
         uses: xu-cheng/latex-action@v4
         with:
-          root_file: ai-alisdes.tex
-          args: '-xelatex -file-line-error -interaction=nonstopmode -synctex=1 -shell-escape resume'
+          root_file: ai-slides.tex
+          args: '-xelatex -file-line-error -interaction=nonstopmode -synctex=1 -shell-escape ai-slides'
           working_directory: ai-intro
