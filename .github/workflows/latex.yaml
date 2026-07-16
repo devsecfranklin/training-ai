@@ -22,3 +22,10 @@ jobs:
           root_file: ai-tokens.tex
           args: '-xelatex -file-line-error -interaction=nonstopmode -synctex=1 -shell-escape ai-tokens'
           working_directory: ai-tokens
+
+      - name: slides - ai mcap and rag
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: ai-mcp-rag.tex
+          args: '-xelatex -file-line-error -interaction=nonstopmode -synctex=1 -shell-escape ai-mcp-rag'
+          working_directory: ai-mcp-rag
