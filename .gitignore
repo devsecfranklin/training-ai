@@ -136,6 +136,6 @@ acs-*.bib
 
 # fixme
 *.lox
- **/*.swp 
+ *.swp 
 
 update-tlmgr-latest.sh
