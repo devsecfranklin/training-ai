@@ -7,3 +7,7 @@
 ## 02 Tokenization
 
 [Tokens](./ai-tokens)
+
+## 03 MCP and RAG
+
+[MCP](./ai-mcp-and-rag)

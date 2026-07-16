@@ -33,6 +33,21 @@
 		\item latest version: https://drive.google.com/file/d/1wfr\_2E9\_xZjOrY7pQP07Az928s40dDdP/view
 	}
 	
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
+	\begin{frame}{}
+		\setlength{\TPHorizModule}{\textwidth}
+		\setlength{\TPVertModule}{\textwidth}
+		% Slide title in upper left
+		\begin{textblock}{0.74}(0.05,0.05)
+			\bfseries\large\normalcolor{Overview}
+		\end{textblock}
+		Today we will look at two recent popular ways for LLM's to pull contextual data and other digital artifacts. This data is meant to be used in conjunction with user AI sessions. 
+		\begin{itemize}
+		\item Model Context Prtocol (MCP)
+		\item Retreival-Augmented Generation (RAG)
+		\end{itemize}
+	\end{frame}
+
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{section.png}}
 	\section{\textcolor{white}{Review From last Time}}
 	
@@ -57,11 +72,11 @@
 		\begin{textblock}{0.74}(0.05,0.05)
 			\bfseries\large\normalcolor{Part 2: LLM Tokenization}
 		\end{textblock}
-		We looked at how the LLM chunks our sentences. 
+		We looked at how the LLM breaks our conversations down into discrete ``chunks'' known as tokens. We discussed ways to improve AI sessions and increase efficacy of session results.  
 	\end{frame}
 
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{section.png}}
-	\section{\textcolor{white}{Model Context Protoco: architecture and components}}
+	\section{\textcolor{white}{Model Context Protocol: \\ Architecture and Components}}
 	
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
 	\begin{frame}{}
@@ -159,6 +174,9 @@
 		\item Slide created July 24th, 2025
 		\item Source material: \href{https://cloud.google.com/discover/what-is-model-context-protocol?hl=en}{What is the MCP and how does it work?}
 	}
+	
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{section.png}}
+	\section{\textcolor{white}{Retrieval-Augmented Generation: \\ Architecture and Components}}
 
 	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{blank_slide.png}}
 	\begin{frame}
