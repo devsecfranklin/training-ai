@@ -81,10 +81,6 @@ libtool
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
-# *.pdf
-
-## Generated if empty string is given at "Please type another file name for output:"
-.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -140,3 +136,6 @@ acs-*.bib
 
 # fixme
 *.lox
+ **/*.swp 
+
+update-tlmgr-latest.sh
